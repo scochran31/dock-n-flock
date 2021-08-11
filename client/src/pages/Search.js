@@ -24,7 +24,7 @@ function Search() {
         e.preventDefault();
         setIsLoading(true);
         const result = await axios(
-            `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${env.TM_API}&city=${city}&keyword=${event}&size=4`
+            `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${env.TM_KEY}&city=${city}&keyword=${event}&size=4`
         );
         const ev = result.data._embedded.events;
         setItems(ev);
