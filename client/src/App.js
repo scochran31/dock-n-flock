@@ -1,3 +1,21 @@
+import React from 'react'
+import { ChakraProvider } from "@chakra-ui/react"
+import Header from './components/Header'
+// import Login from './pages/Login'
+import Search from './pages/Search'
+
+function App() {
+  return (
+    <ChakraProvider>
+      <Header />
+      {/* <Login /> */}
+      <Search />
+    </ChakraProvider>
+  )
+}
+
+export default App
+
 // import React, { useState, useEffect } from 'react'
 // import Header from './components/Header/Header'
 // import TMList from './components/Results/TMList'
@@ -9,6 +27,15 @@
 
 //   const [items, setItems] = useState([])
 //   const [isLoading, setIsLoading] = useState(true);
+
+// useEffect(() => {
+//   const fetchItems = async () => {
+//     setIsLoading(true)
+//     const result = await axios(
+//       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${env.TM_API}&city=salt lake city&keyword=buble&size=4`
+//     )
+//     const ev = result.data._embedded.events
+//     console.log(ev)
 
 //   useEffect(() => {
 //     const fetchItems = async () => {
@@ -34,18 +61,3 @@
 // }
 
 // export default App;
-import React from 'react'
-import { ChakraProvider } from "@chakra-ui/react"
-import Header from './components/Header/Header'
-import Account from './components/Login/Account'
-
-function App() {
-  return (
-    <ChakraProvider>
-      <Header />
-      <Account />
-    </ChakraProvider>
-  )
-}
-
-export default App
