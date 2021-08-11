@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import {
     Flex,
     Box,
-    // Center,
     FormControl,
     FormLabel,
-    // FormErrorMessage,
-    // FormHelperText,
     Input,
     Button,
 } from "@chakra-ui/react"
@@ -30,9 +27,7 @@ function Account() {
                     <FormControl>
                         <FormLabel htmlFor='email' padding='2'
                         >Email Address</FormLabel>
-                        <Input
-                            isRequired
-                            type='email'
+                        <Input type='email'
                             id='email'
                             value={emailAddress}
                             onChange={({ target }) => setEmailAddress(target.value)} />
