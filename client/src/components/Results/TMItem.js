@@ -25,7 +25,7 @@ const TMItem = ({ item }) => {
                             <Button colorScheme='teal'>
                                 <a href={item.url} target='_blank' rel="noreferrer noopener">Buy Tickets!</a>
                             </Button>
-                            <ParkingMap item={item} />
+                            <ParkingMap item={item} colorScheme='teal'/>
                         </li>
                     </ul>
                 </Box>
