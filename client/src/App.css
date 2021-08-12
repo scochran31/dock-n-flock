@@ -1,3 +1,7 @@
+.leaflet-container {
+  height: 75vh;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
