@@ -7,11 +7,11 @@ const typeDefs = gql`
     email: String
   }
 
-
   type Auth {
     token: ID!
     user: User
   }
+
 
   type Query {
     me: User
@@ -26,3 +26,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+
