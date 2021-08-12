@@ -47,8 +47,8 @@ function Search() {
                             type='text'
                             id='city'
                             name='city'
-                            value={city}
-                            onChange={handleChange} />
+                            defaultValue={city}
+                            onBlur={handleChange} />
                     </Box>
 
                     <Box>
@@ -59,8 +59,8 @@ function Search() {
                             id='event'
                             type='text'
                             name='event'
-                            value={event}
-                            onChange={handleChange}
+                            defaultValue={event}
+                            onBlur={handleChange}
                         />
                     </Box>
                 </SimpleGrid >
