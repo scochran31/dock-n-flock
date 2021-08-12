@@ -21,7 +21,6 @@ function Search() {
     const [isLoading, setIsLoading] = useState(true);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
         setIsLoading(true);
         const result = await axios(
             `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${env.TM_KEY}&city=${city}&keyword=${event}&size=4`
