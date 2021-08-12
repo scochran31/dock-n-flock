@@ -20,7 +20,18 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Thought'
+      }
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
   {
     toJSON: {
@@ -44,6 +55,9 @@ userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
+userSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
+});
 
 const User = model('User', userSchema);
 
