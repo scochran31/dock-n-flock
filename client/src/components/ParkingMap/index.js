@@ -3,12 +3,12 @@ import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, 
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
-const MapPopup = ({ item }) => {
+const ParkingMap = ({ item }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const venue = item._embedded.venues[0]
-    const lat = venue.location.latitude || 40.7406;
-    const long = venue.location.longitude || -111.8927;
-    const locationName = venue.name || "Smiths Field";
+    const lat = venue.location.latitude;
+    const long = venue.location.longitude;
+    const locationName = venue.name;
     console.log(venue.location,long,lat);
     return (
         <>
@@ -37,4 +37,4 @@ const MapPopup = ({ item }) => {
     )
 }
 
-export default MapPopup;
+export default ParkingMap;
