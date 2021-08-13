@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Button } from "@chakra-ui/react"
+import ParkingMap from '../ParkingMap'
 
 const TMItem = ({ item }) => {
     return (
@@ -24,6 +25,7 @@ const TMItem = ({ item }) => {
                             <Button colorScheme='teal'>
                                 <a href={item.url} target='_blank' rel="noreferrer noopener">Buy Tickets!</a>
                             </Button>
+                            <ParkingMap item={item} colorScheme='teal'/>
                         </li>
                     </ul>
                 </Box>

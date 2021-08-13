@@ -18,9 +18,13 @@ node_modules/
 .env.production.local
 .env
 client/public/env.js
+client/public/index.html
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 .history
+=======
+>>>>>>> 075fb348bd6154fdaba3533e9c789284800f7228

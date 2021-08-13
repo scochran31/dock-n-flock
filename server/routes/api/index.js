@@ -3,4 +3,4 @@ const userRoutes = require('./user-routes');
 
 router.use('/users', userRoutes);
 
-module.esxports = router;
+module.exports = router;
