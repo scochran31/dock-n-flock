@@ -42,7 +42,7 @@ const ParkingLot = ({ way, selected, onSelect, colorScheme }) => {
                         {tags.surface && <Text>Surface: {tags.surface}</Text>}
                         {tags.access && <Text>Access: {tags.access}</Text>}
                         {tags['capacity:disabled'] && <Text>Handicapped: {tags['capacity:disabled']}</Text>}
-                        <Button colorScheme={colorScheme} as='a' href={mapsLink} pointerEvents={'all'}>Get Directions</Button>
+                        <Button target='_blank' variant='outline' textColor='white' as='a' href={mapsLink} pointerEvents={'all'}>Get Directions</Button>
                     </Stack>
                 </Tooltip>}
         </Polygon>
