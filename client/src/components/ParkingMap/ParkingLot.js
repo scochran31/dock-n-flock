@@ -6,7 +6,7 @@ const ParkingLot = ({ way }) => {
     const name = (() => {
         let prefix = '';
         if (tags.name) return tags.name;
-        else if (tags['operator:type'] == 'private') prefix = "Private ";
+        else if (tags['operator:type'] === 'private') prefix = "Private ";
         return prefix + "Parking Lot";
     })();
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useAccordionItemState, useDisclosure } from '@chakra-ui/react';
+import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer} from 'react-leaflet';
 import axios from 'axios';
@@ -42,10 +42,10 @@ const ParkingMap = ({ item, colorScheme }) => {
             {headers: {"Content-Type": "application/x-www-form-urlencoded"}});
         const nodes = {};
         result.data.elements
-            .filter(e => e.type == 'node')
+            .filter(e => e.type === 'node')
             .forEach(node => nodes[node.id] = [node.lat, node.lon]);
         const localWays = result.data.elements
-            .filter(e => e.type == 'way')
+            .filter(e => e.type === 'way')
             .map(way => ({
                 key: way.id,
                 poly: way.nodes.map(nodeID => nodes[nodeID]),
@@ -63,7 +63,7 @@ const ParkingMap = ({ item, colorScheme }) => {
                     <ModalHeader>Parking near {locationName}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <MapContainer center={[lat, long]} zoom={15} scrollWheelZoom={true}>
+                        <MapContainer isLoading={isLoading} center={[lat, long]} zoom={15} scrollWheelZoom={true}>
                             <TileLayer
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
