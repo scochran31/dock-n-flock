@@ -20,6 +20,7 @@ const getBoundingBox = (lat, long, radius) => {
 const ParkingMap = ({ item, colorScheme }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedKey, setSelectedKey] = useState(null);
     const [ways, setWays] = useState([]);
 
     const venue = item._embedded.venues[0]
@@ -54,6 +55,10 @@ const ParkingMap = ({ item, colorScheme }) => {
         setWays(localWays);
         setIsLoading(false);
     }
+    function onSelect(key){
+        setSelectedKey(key);
+    }
+
     return (
         <>
             <Button colorScheme={colorScheme} onClick={loadMap}>View Parking Map</Button>
@@ -68,7 +73,7 @@ const ParkingMap = ({ item, colorScheme }) => {
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
-                            {ways.length && ways.map(way => <ParkingLot way={way}/>)}
+                            {ways.length && ways.map(way => <ParkingLot colorScheme={colorScheme} way={way} key={way.key} selected={selectedKey === way.key} onSelect={onSelect}/>)}
                         </MapContainer>
                     </ModalBody>
                 </ModalContent>
