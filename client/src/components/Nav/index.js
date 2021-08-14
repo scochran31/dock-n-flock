@@ -1,46 +1,48 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import {
-    Flex,
     Box,
     Heading,
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    Spacer,
-    Button
+    Button,
+    Image,
+    SimpleGrid
 } from "@chakra-ui/react"
-
+import { motion } from 'framer-motion'
+import logo from '../../Assets/Dock-N-Flock-logo-white.png'
 export default function Header() {
     return (
-        <header>
-            <Flex backgroundColor='gray.500'>
-                <Box p="2.5" h='5vh'>
-                    <Heading size="lg" color='white'>🚙  Dock 'n' Flock  🚗</Heading>
+        <Heading h='auto' mb='10' color='white' backgroundColor='gray.500'>
+            <SimpleGrid columns='3'>
+                <Box></Box>
+                <Box p="2.5" display='flex' alignItems='center' justifyContent='space-around'>
+                    <NavLink to='/'>
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 20, repeat: Infinity }}>
+                            <Image
+                                width='250px'
+                                height='150px'
+                                objectFit='cover'
+                                pos
+                                src={logo}
+                                alt='logo' />
+                        </motion.div>
+                    </NavLink>
                 </Box>
-                <Spacer />
-                <Box p='2.5'>
+                <Box pt='50' d='flex' alignItems='center' justifyContent='space-around'>
+                    <NavLink to='/signup'>
+                        <Button colorScheme='yellow' mt='4'>Signup</Button>
+                    </NavLink>
+                    <NavLink to='/search'>
+                        <Button colorScheme='yellow' mt='4'>Search</Button>
+                    </NavLink>
+                    <NavLink to='/parkingGarage'>
+                        <Button colorScheme='yellow' mt='4'>Parking Garage</Button>
+                    </NavLink>
 
-                    <Breadcrumb spacing='10px'>
-                        <Button colorScheme='teal' mr='4'>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink href="#">Sign Up</BreadcrumbLink>
-                            </BreadcrumbItem>
-                        </Button>
 
-                        <Button colorScheme="teal" mr='4'>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink href="#">Log In</BreadcrumbLink>
-                            </BreadcrumbItem>
-                        </Button>
-
-                        <Button colorScheme='teal' mr='4'>
-                            <BreadcrumbItem>
-                                <BreadcrumbLink href="#">Contact Us</BreadcrumbLink>
-                            </BreadcrumbItem>
-                        </Button>
-                    </Breadcrumb>
                 </Box>
-            </Flex>
-        </header>
+            </SimpleGrid>
+        </Heading>
     )
 }

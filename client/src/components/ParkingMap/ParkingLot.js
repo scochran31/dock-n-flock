@@ -7,8 +7,10 @@ const ParkingLot = ({ way, selected, onSelect, colorScheme }) => {
     const name = (() => {
         let prefix = '';
         if (tags.name) return tags.name;
+
         else if (tags['operator:type'] === 'private' || tags.access === 'private' || tags.access === 'customers') prefix += "Private ";
         else if (tags.fee === 'yes') prefix += "Paid ";
+
         return prefix + "Parking Lot";
     })();
 

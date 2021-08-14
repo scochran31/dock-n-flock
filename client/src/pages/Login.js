@@ -20,7 +20,7 @@ function Account() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('emailAddress', emailAddress)
-        console.log('passwoord', password)
+        console.log('password', password)
         console.log('I was submitted')
     }
 
