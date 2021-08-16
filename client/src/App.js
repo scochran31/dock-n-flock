@@ -13,11 +13,13 @@ import {
   // Link
 } from 'react-router-dom'
 
+import garagePhoto from './Assets/ParkingGarage.png'
+
 function App() {
   return (
     <ChakraProvider>
       <Router>
-        <Box>
+        <Box bgImage={garagePhoto} bgPosition='center' h='100%' w='100%' >
         <Nav />
           <Switch>
             <Route path='/login'><Login /></Route>

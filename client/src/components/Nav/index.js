@@ -5,12 +5,14 @@ import {
     Heading,
     Button,
     Image,
-    SimpleGrid
+    SimpleGrid,
+    Flex
 } from "@chakra-ui/react"
 import { motion } from 'framer-motion'
 import logo from '../../Assets/Dock-N-Flock-logo-white.png'
 export default function Header() {
     return (
+        <Flex wrap='wrap'>
         <Heading h='auto' mb='10' color='white' backgroundColor='gray.500'>
             <SimpleGrid columns='3'>
                 <Box></Box>
@@ -29,7 +31,7 @@ export default function Header() {
                         </motion.div>
                     </NavLink>
                 </Box>
-                <Box pt='50' d='flex' alignItems='center' justifyContent='space-around'>
+                    <Flex wrap='wrap' alignItems='center'>
                     <NavLink to='/signup'>
                         <Button colorScheme='yellow' mt='4'>Signup</Button>
                     </NavLink>
@@ -38,11 +40,10 @@ export default function Header() {
                     </NavLink>
                     <NavLink to='/parkingGarage'>
                         <Button colorScheme='yellow' mt='4'>Parking Garage</Button>
-                    </NavLink>
-
-
-                </Box>
+                        </NavLink>
+                    </Flex>
             </SimpleGrid>
         </Heading>
+        </Flex>
     )
 }
