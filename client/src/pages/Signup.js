@@ -1,8 +1,18 @@
-import { Box, Text } from '@chakra-ui/react';
+
 import React, { useState } from 'react';
 
+import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+
+import { 
+    Flex,
+    Box, 
+    Input,
+    Button,
+    FormControl,
+    FormLabel
+} from '@chakra-ui/react';
 
 const Signup = () => {
 
@@ -35,10 +45,41 @@ const Signup = () => {
   };
 
 
-    return (
-        <Box>
-            <Text fontSize='5xl'>This is the Signup Page!</Text>
+return (
+    <Flex justifyContent='center'>
+        <Box ml='2'>
+            <form method='POST' onSubmit={handleFormSubmit}>
+                <FormControl>
+                    <FormLabel htmlFor='username' padding='2'>Username</FormLabel>
+                    <Input type='username'
+                        id='username'
+                        value={formState.username}
+                        onChange={({ target }) => handleChange(target.value)} />
+
+                <FormLabel htmlFor='email' padding='2'>Email Address</FormLabel>
+                    <Input type='email'
+                        id='email'
+                        value={formState.email}
+                        onChange={({ target }) => handleChange(target.value)} />
+
+                <FormLabel padding='2'>Password</FormLabel>
+                    <Input
+                        isRequired
+                        type='password'
+                        id='password'
+                        value={formState.password}
+                        onChange={({ target }) => handleChange(target.value)} />
+                </FormControl>
+
+
+                <FormControl mt='2'>
+                    <Button type='submit' colorScheme='teal'>Sign Up</Button>
+                </FormControl>
+            </form>
+                {/* Display error if there is an error */}
+                {error && <div>Signup failed</div>}
         </Box>
+    </Flex>
     )
 }
 

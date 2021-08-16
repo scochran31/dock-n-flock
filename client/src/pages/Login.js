@@ -35,6 +35,7 @@ function Account() {
                             id='email'
                             value={emailAddress}
                             onChange={({ target }) => setEmailAddress(target.value)} />
+                            
                         <FormLabel padding='2'>Password</FormLabel>
                         <Input
                             isRequired
