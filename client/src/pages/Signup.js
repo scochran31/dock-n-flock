@@ -1,9 +1,12 @@
 
 import React, { useState } from 'react';
 
-import { useMutation } from '@apollo/react-hooks';
+// import { ApolloProvider } from '@apollo/client';
+// import { useMutation, ApolloProvider } from '@apollo/react-hooks';
+import { useMutation, ApolloProvider } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+
 
 import { 
     Flex,
@@ -48,6 +51,7 @@ function Signup() {
 
 
 return (
+    <ApolloProvider>
     <Flex justifyContent='center'>
         <Box ml='2'>
             <form method='POST' onSubmit={handleSubmit}>
@@ -87,7 +91,8 @@ return (
                 {error && <div>Signup failed</div>}
         </Box>
     </Flex>
+    </ApolloProvider>
     )
 }
 
-export default Signup
+export default Signup 
