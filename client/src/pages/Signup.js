@@ -14,9 +14,11 @@ import {
     FormLabel
 } from '@chakra-ui/react';
 
-const Signup = () => {
+function Signup() {
 
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+    // const [emailAddress, setEmailAddress] = useState('')
+    // const [password, setPassword] = useState('')
     const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleChange = event => {
@@ -28,7 +30,7 @@ const Signup = () => {
         });
       };
 
-  const handleFormSubmit = async event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     // use try/catch to handle errors
@@ -48,19 +50,23 @@ const Signup = () => {
 return (
     <Flex justifyContent='center'>
         <Box ml='2'>
-            <form method='POST' onSubmit={handleFormSubmit}>
+            <form method='POST' onSubmit={handleSubmit}>
                 <FormControl>
                     <FormLabel htmlFor='username' padding='2'>Username</FormLabel>
-                    <Input type='username'
+                    <Input 
+                        type='username'
                         id='username'
                         value={formState.username}
-                        onChange={({ target }) => handleChange(target.value)} />
+                        // onChange={({ target }) => handleChange(target.value)} />
+                        onChange={handleChange}/>
 
                 <FormLabel htmlFor='email' padding='2'>Email Address</FormLabel>
-                    <Input type='email'
+                    <Input 
+                        type='email'
                         id='email'
                         value={formState.email}
-                        onChange={({ target }) => handleChange(target.value)} />
+                        // onChange={({ target }) => handleChange(target.value)} />
+                        onChange={handleChange}/>
 
                 <FormLabel padding='2'>Password</FormLabel>
                     <Input
@@ -68,12 +74,13 @@ return (
                         type='password'
                         id='password'
                         value={formState.password}
-                        onChange={({ target }) => handleChange(target.value)} />
+                        // onChange={({ target }) => handleChange(target.value)} />
+                        onChange={handleChange}/>
                 </FormControl>
 
 
                 <FormControl mt='2'>
-                    <Button type='submit' colorScheme='teal'>Sign Up</Button>
+                    <Button onClick={handleSubmit} colorScheme='teal'>Sign Up!</Button>
                 </FormControl>
             </form>
                 {/* Display error if there is an error */}
