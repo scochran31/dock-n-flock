@@ -45,25 +45,6 @@ function Signup() {
     });
   };
 
-  
-
-    // // use try/catch to handle errors
-    // try {
-    //   // execute addUser mutation and pass in varaible data from form
-    //   const { data } = await addUser({
-    //     variables: { ...formState }
-    //   });
-    //   console.log(data);
-
-    //   Auth.login(data.addUser.token);
-    // } catch (e) {
-    //   console.error(e);
-    // }
-    // setFormState({ username: '', email: '', password: ''})
-  
-
-
-
 
   return (
       <Flex justifyContent='center'>
