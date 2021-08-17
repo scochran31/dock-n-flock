@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider, Box } from "@chakra-ui/react"
 
 import Nav from './components/Nav'
 import Home from './pages/Home'
@@ -19,8 +19,8 @@ import garagePhoto from './Assets/ParkingGarage.png'
 function App() {
   return (
     <ChakraProvider>
-      <Router>
-        {/* <Box bgImage={garagePhoto} bgPosition='center' h='100%' w='100%' > */}
+      <Box bgImage={garagePhoto} bgPosition='center' h='100vh' w='100%' position='sticky' >
+        <Router>
           <Nav />
           <Switch>
             <Route path='/login'><Login /></Route>
@@ -29,8 +29,8 @@ function App() {
             <Route path='/search'><Search /></Route>
             <Route path='/'><Home /></Route>
           </Switch>
-        {/* </Box> */}
       </Router>
+      </Box>
     </ChakraProvider>
   )
 }

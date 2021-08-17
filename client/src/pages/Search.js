@@ -24,7 +24,7 @@ function Search() {
         e.preventDefault();
         setIsLoading(true);
         const result = await axios(
-            `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${env.TM_KEY}&city=${city}&keyword=${event}&size=4`
+            `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${env.TM_KEY}&city=${city}&keyword=${event}&size=8`
         );
         const ev = result.data._embedded.events;
         setItems(ev);
@@ -38,38 +38,34 @@ function Search() {
     return (
         <Box p='5'>
             <form action='submit' onSubmit={searchSubmit}>
-            <FormControl>
-                <SimpleGrid columns="2" spacing={10}>
-                    <Box>
+                <FormControl colorScheme='whiteAlpha'>
+                    <SimpleGrid columns="2" spacing={10}>
+                        <Box>
+                            <Input
+                                placeholder='What city are you looking in?'
+                                type='text'
+                                id='city'
+                                name='city'
+                                defaultValue={city}
+                                onBlur={handleChange}
+                                variant='filled' />
+                        </Box>
 
-                        <FormLabel p='2'>
-                            What city are you looking in?
-                        </FormLabel>
-                        <Input
-                            type='text'
-                            id='city'
-                            name='city'
-                            defaultValue={city}
-                            onBlur={handleChange} />
-                    </Box>
-
-                    <Box>
-                        <FormLabel p='2'>
-                            What are you searching for?
-                        </FormLabel>
-                        <Input
-                            id='event'
-                            type='text'
-                            name='event'
-                            defaultValue={event}
-                            onBlur={handleChange}
-                            />
-                    </Box>
-                </SimpleGrid >
-            </FormControl>
-            <FormControl mt='2'>
+                        <Box>
+                            <Input
+                                placeholder='What are you searching for?'
+                                id='event'
+                                type='text'
+                                name='event'
+                                defaultValue={event}
+                                onBlur={handleChange}
+                                variant='filled' />
+                        </Box>
+                    </SimpleGrid >
+                </FormControl>
+                <FormControl mt='2'>
                     <Button type='submit' colorScheme='teal'>Search Now!</Button>
-            </FormControl>
+                </FormControl>
             </form>
             <TMList isLoading={isLoading} items={items} />
         </Box>

@@ -7,8 +7,10 @@ import {
     StackDivider,
     Container,
     Text,
-    Link
+    Link,
+    Link as ReachLink
 } from "@chakra-ui/react";
+import { NavLink } from 'react-router-dom';
 
 
 function Home() {
@@ -27,10 +29,11 @@ function Home() {
                         borderRadius='50px'
                         shadow='md'
                         borderWidth='2px'
+                        bgColor='whiteAlpha.700'
                     >
                         <Login />
                         <Container pt='3vh'>
-                            <Text fontSize='Xl'>Need to create an account?{' '} <Link color='hotpink'>Sign up{' '}</Link>by clicking this link!</Text>
+                            <Text fontSize='Xl'>Need to create an account?{' '} <Link as={ReachLink} to='/signup' color='hotpink'>Sign up{' '}</Link>by clicking this link!</Text>
                         </Container>
                     </Box>
                 </Box>
