@@ -6,10 +6,6 @@ import React, { useState } from 'react';
 import { useMutation, ApolloProvider } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-
-
-
-
 import {
   Flex,
   Box,
@@ -19,6 +15,10 @@ import {
   FormLabel
 } from '@chakra-ui/react';
 
+
+
+
+
 function Signup() {
 
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
@@ -26,14 +26,14 @@ function Signup() {
   // const [password, setPassword] = useState('')
   const [addUser, { error }] = useMutation(ADD_USER);
 
-  //     const handleChange = event => {
-  //         const { name, value } = event.target;
+  const handleChange = event => {
+    const { name, value } = event.target;
 
-  setFormState({
-    ...formState,
-    [name]: value,
-  });
-
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -63,7 +63,7 @@ function Signup() {
                 type='username'
                 id='username'
                 value={formState.username}
-                // onChange={({ target }) => handleChange(target.value)} />
+                onChange={({ target }) => handleChange(target.value)}
                 onChange={handleChange} />
 
               <FormLabel htmlFor='email' padding='2'>Email Address</FormLabel>
@@ -71,7 +71,7 @@ function Signup() {
                 type='email'
                 id='email'
                 value={formState.email}
-                // onChange={({ target }) => handleChange(target.value)} />
+                onChange={({ target }) => handleChange(target.value)}
                 onChange={handleChange} />
 
               <FormLabel padding='2'>Password</FormLabel>
@@ -80,7 +80,7 @@ function Signup() {
                 type='password'
                 id='password'
                 value={formState.password}
-                // onChange={({ target }) => handleChange(target.value)} />
+                onChange={({ target }) => handleChange(target.value)}
                 onChange={handleChange} />
             </FormControl>
 

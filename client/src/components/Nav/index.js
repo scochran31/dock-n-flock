@@ -6,13 +6,13 @@ import {
     Button,
     Image,
     SimpleGrid,
-    Flex
+    Flex,
+    HStack
 } from "@chakra-ui/react"
 import { motion } from 'framer-motion'
 import logo from '../../Assets/Dock-N-Flock-logo-white.png'
 export default function Header() {
     return (
-        <Flex wrap='wrap'>
         <Heading h='auto' mb='10' color='white' backgroundColor='gray.500'>
             <SimpleGrid columns='3'>
                 <Box></Box>
@@ -44,6 +44,5 @@ export default function Header() {
                     </Flex>
             </SimpleGrid>
         </Heading>
-        </Flex>
     )
 }
