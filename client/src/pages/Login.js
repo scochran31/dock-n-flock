@@ -27,7 +27,7 @@ function Login() {
     return (
         <Flex justifyContent='center'>
             <Box ml='2'>
-                <form method='POST' onSubmit={handleSubmit}>
+                <form method='POST' action='submit' onSubmit={handleSubmit}>
                     <FormControl>
                         <FormLabel htmlFor='email' padding='2'
                         >Email Address</FormLabel>

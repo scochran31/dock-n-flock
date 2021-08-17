@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './Login'
 import {
+    Flex,
     Stack,
     Box,
     StackDivider,
@@ -12,7 +13,7 @@ import {
 
 function Home() {
     return (
-        <div>
+        <Flex>
             <Stack
                 direction={['column', 'row']}
                 spacing={4}
@@ -34,7 +35,7 @@ function Home() {
                     </Box>
                 </Box>
             </Stack>
-        </div>
+        </Flex>
     )
 }
 

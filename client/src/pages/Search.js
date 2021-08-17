@@ -20,7 +20,8 @@ function Search() {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const handleSubmit = async (e) => {
+    const searchSubmit = async (e) => {
+        e.preventDefault();
         setIsLoading(true);
         const result = await axios(
             `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${env.TM_KEY}&city=${city}&keyword=${event}&size=4`
@@ -36,9 +37,11 @@ function Search() {
 
     return (
         <Box p='5'>
+            <form action='submit' onSubmit={searchSubmit}>
             <FormControl>
                 <SimpleGrid columns="2" spacing={10}>
                     <Box>
+
                         <FormLabel p='2'>
                             What city are you looking in?
                         </FormLabel>
@@ -60,13 +63,14 @@ function Search() {
                             name='event'
                             defaultValue={event}
                             onBlur={handleChange}
-                        />
+                            />
                     </Box>
                 </SimpleGrid >
             </FormControl>
             <FormControl mt='2'>
-                <Button onClick={handleSubmit} colorScheme='teal'>Search Now!</Button>
+                    <Button type='submit' colorScheme='teal'>Search Now!</Button>
             </FormControl>
+            </form>
             <TMList isLoading={isLoading} items={items} />
         </Box>
     )
