@@ -12,7 +12,7 @@ import {
 
 
 
-function Account() {
+function Login() {
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
     // const isInvalid = password === '' || emailAddress === '';
@@ -53,4 +53,4 @@ function Account() {
     )
 }
 
-export default Account
+export default Login;

@@ -3,9 +3,6 @@ import { Box, ChakraProvider } from "@chakra-ui/react"
 import { render } from 'react-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client";
 
-
-
-
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -45,4 +42,4 @@ render(
   document.getElementById('root'),
 );
 
-export default App
+export default App;
