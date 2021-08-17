@@ -45,7 +45,7 @@ function Login() {
                             onChange={({ target }) => setPassword(target.value)} />
                     </FormControl>
                     <FormControl mt='2'>
-                        <Button type='submit' colorScheme='teal'>Sign In</Button>
+                        <Button type='submit' colorScheme='blue'>Sign In</Button>
                     </FormControl>
                 </form>
             </Box>
