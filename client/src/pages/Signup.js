@@ -44,19 +44,21 @@ function Signup() {
       const { data } = await addUser({
         variables: { ...formState }
       });
+      console.log(data);
 
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
+    setFormState({ username: '', email: '', password: ''})
   }
 
 
   return (
-    // <ApolloProvider>
+    
       <Flex justifyContent='center'>
       <Box boxShadow='sm' ml='2'>
-          <form method='POST' onSubmit={handleSubmit}>
+          <form method='POST' action='submit' onSubmit={handleSubmit}>
             <FormControl>
               <FormLabel htmlFor='username' padding='2'>Username</FormLabel>
               <Input
@@ -64,13 +66,15 @@ function Signup() {
                 id='username'
                 value={formState.username}
               onChange={({ target }) => handleChange(target)} />
+            {/* //   onChange={handleChange} /> */}
 
               <FormLabel htmlFor='email' padding='2'>Email Address</FormLabel>
               <Input
               name='email'
                 id='email'
                 value={formState.email}
-              onChange={({ target }) => handleChange(target)} />
+                onChange={({ target }) => handleChange(target)} />
+            {/* onChange={handleChange} /> */}
 
               <FormLabel padding='2'>Password</FormLabel>
               <Input
@@ -79,19 +83,20 @@ function Signup() {
               id='password'
               type='password'
                 value={formState.password}
-              onChange={({ target }) => handleChange(target)} />
+                onChange={({ target }) => handleChange(target)} />
+            {/* onChange={handleChange} /> */}
             </FormControl>
 
 
             <FormControl mt='2'>
-              <Button onClick={handleSubmit} colorScheme='teal'>Sign Up!</Button>
+              <Button type='submit' colorScheme='teal'>Sign Up!</Button>
             </FormControl>
           </form>
           {/* Display error if there is an error */}
           {error && <div>Signup failed</div>}
         </Box>
       </Flex>
-    // </ApolloProvider>
+   
   )
 }
 
