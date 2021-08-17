@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useAccordionItemState, useDisclosure } from '@chakra-ui/react';
+import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer} from 'react-leaflet';
 import axios from 'axios';
@@ -20,6 +20,7 @@ const getBoundingBox = (lat, long, radius) => {
 const ParkingMap = ({ item, colorScheme }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedKey, setSelectedKey] = useState(null);
     const [ways, setWays] = useState([]);
 
     const venue = item._embedded.venues[0]
@@ -42,10 +43,10 @@ const ParkingMap = ({ item, colorScheme }) => {
             {headers: {"Content-Type": "application/x-www-form-urlencoded"}});
         const nodes = {};
         result.data.elements
-            .filter(e => e.type == 'node')
+            .filter(e => e.type === 'node')
             .forEach(node => nodes[node.id] = [node.lat, node.lon]);
         const localWays = result.data.elements
-            .filter(e => e.type == 'way')
+            .filter(e => e.type === 'way')
             .map(way => ({
                 key: way.id,
                 poly: way.nodes.map(nodeID => nodes[nodeID]),
@@ -54,6 +55,10 @@ const ParkingMap = ({ item, colorScheme }) => {
         setWays(localWays);
         setIsLoading(false);
     }
+    function onSelect(key){
+        setSelectedKey(key);
+    }
+
     return (
         <>
             <Button colorScheme={colorScheme} onClick={loadMap}>View Parking Map</Button>
@@ -63,12 +68,12 @@ const ParkingMap = ({ item, colorScheme }) => {
                     <ModalHeader>Parking near {locationName}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <MapContainer center={[lat, long]} zoom={15} scrollWheelZoom={true}>
+                        <MapContainer isLoading={isLoading} center={[lat, long]} zoom={15} scrollWheelZoom={true}>
                             <TileLayer
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
-                            {ways.length && ways.map(way => <ParkingLot way={way}/>)}
+                            {ways.length && ways.map(way => <ParkingLot colorScheme={colorScheme} way={way} key={way.key} selected={selectedKey === way.key} onSelect={onSelect}/>)}
                         </MapContainer>
                     </ModalBody>
                 </ModalContent>

@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+
 import {
     Flex,
     Box,
@@ -6,7 +8,9 @@ import {
     FormLabel,
     Input,
     Button,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
+
+
 
 function Account() {
     const [emailAddress, setEmailAddress] = useState('')
@@ -16,7 +20,7 @@ function Account() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('emailAddress', emailAddress)
-        console.log('passwoord', password)
+        console.log('password', password)
         console.log('I was submitted')
     }
 

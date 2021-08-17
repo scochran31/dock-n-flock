@@ -1,0 +1,47 @@
+{
+    "amenity": {
+        "parking": 430
+    },
+    "parking": {
+        "surface": 157,
+        "multi-storey": 34,
+        "street_side": 1
+    },
+    "surface": {
+        "asphalt": 90,
+        "concrete": 4,
+        "artificial_turf": 1,
+        "paved": 9,
+        "unpaved": 1,
+        "as": 1
+    },
+    "access": {
+        "private": 76,
+        "customers": 24,
+        "permissive": 5,
+        "yes": 21,
+        "designated": 3,
+        "no": 1,
+        "permit": 7
+    },
+    "name": {
+        "Green Lot 1": 2
+    },
+    "capacity:disabled": {
+        "0": 7,
+        "1": 3,
+        "2": 4,
+        "3": 1,
+        "4": 3,
+        "6": 2,
+        "9": 1,
+        "yes": 4
+    },
+    "fee": {
+        "no": 65,
+        "yes": 4
+    },
+    "operator": {
+        "Santa Clara Unified School District": 4
+    }
+}
