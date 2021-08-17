@@ -63,16 +63,14 @@ function Signup() {
                 type='username'
                 id='username'
                 value={formState.username}
-                onChange={({ target }) => handleChange(target.value)}
-                onChange={handleChange} />
+                onChange={({ target }) => handleChange(target.value)} />
 
               <FormLabel htmlFor='email' padding='2'>Email Address</FormLabel>
               <Input
                 type='email'
                 id='email'
                 value={formState.email}
-                onChange={({ target }) => handleChange(target.value)}
-                onChange={handleChange} />
+                onChange={({ target }) => handleChange(target.value)} />
 
               <FormLabel padding='2'>Password</FormLabel>
               <Input
@@ -80,8 +78,7 @@ function Signup() {
                 type='password'
                 id='password'
                 value={formState.password}
-                onChange={({ target }) => handleChange(target.value)}
-                onChange={handleChange} />
+                onChange={({ target }) => handleChange(target.value)} />
             </FormControl>
 
 

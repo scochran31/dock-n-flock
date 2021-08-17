@@ -7,7 +7,6 @@ import {
     Image,
     SimpleGrid,
     Flex,
-    HStack
 } from "@chakra-ui/react"
 import { motion } from 'framer-motion'
 import logo from '../../Assets/Dock-N-Flock-logo-white.png'
