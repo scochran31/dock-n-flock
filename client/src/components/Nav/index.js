@@ -11,6 +11,8 @@ import {
 
 
 import logo from '../../Assets/Dock-N-Flock-logo-white.png'
+
+
 export default function Header() {
     return (
         <Heading h='auto' mb='10' color='white' backgroundColor='blue.800'>
@@ -42,5 +44,7 @@ export default function Header() {
                     </Flex>
             </SimpleGrid>
         </Heading>
+
+       
     )
 }
