@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 // import { ApolloProvider } from '@apollo/client';
 // import { useMutation, ApolloProvider } from '@apollo/react-hooks';
-import { useMutation, ApolloProvider } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import {
@@ -26,8 +26,8 @@ function Signup() {
   // const [password, setPassword] = useState('')
   const [addUser, { error }] = useMutation(ADD_USER);
 
-  const handleChange = event => {
-    const { name, value } = event.target;
+  const handleChange = target => {
+    const { name, value } = target;
 
     setFormState({
       ...formState,
@@ -53,32 +53,33 @@ function Signup() {
 
 
   return (
-    <ApolloProvider>
+    // <ApolloProvider>
       <Flex justifyContent='center'>
-        <Box ml='2'>
+      <Box boxShadow='sm' ml='2'>
           <form method='POST' onSubmit={handleSubmit}>
             <FormControl>
               <FormLabel htmlFor='username' padding='2'>Username</FormLabel>
               <Input
-                type='username'
+              name='username'
                 id='username'
                 value={formState.username}
-                onChange={({ target }) => handleChange(target.value)} />
+              onChange={({ target }) => handleChange(target)} />
 
               <FormLabel htmlFor='email' padding='2'>Email Address</FormLabel>
               <Input
-                type='email'
+              name='email'
                 id='email'
                 value={formState.email}
-                onChange={({ target }) => handleChange(target.value)} />
+              onChange={({ target }) => handleChange(target)} />
 
               <FormLabel padding='2'>Password</FormLabel>
               <Input
                 isRequired
-                type='password'
-                id='password'
+              name='password'
+              id='password'
+              type='password'
                 value={formState.password}
-                onChange={({ target }) => handleChange(target.value)} />
+              onChange={({ target }) => handleChange(target)} />
             </FormControl>
 
 
@@ -90,7 +91,7 @@ function Signup() {
           {error && <div>Signup failed</div>}
         </Box>
       </Flex>
-    </ApolloProvider>
+    // </ApolloProvider>
   )
 }
 
