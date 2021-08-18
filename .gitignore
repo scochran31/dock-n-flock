@@ -6,6 +6,7 @@
 node_modules/
 # testing
 /coverage
+.env
 
 # production
 /build
@@ -24,7 +25,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-<<<<<<< HEAD
 .history
-=======
->>>>>>> 075fb348bd6154fdaba3533e9c789284800f7228

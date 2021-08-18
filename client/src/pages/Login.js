@@ -12,7 +12,7 @@ import {
 
 
 
-function Account() {
+function Login() {
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
     // const isInvalid = password === '' || emailAddress === '';
@@ -27,7 +27,7 @@ function Account() {
     return (
         <Flex justifyContent='center'>
             <Box ml='2'>
-                <form method='POST' onSubmit={handleSubmit}>
+                <form method='POST' action='submit' onSubmit={handleSubmit}>
                     <FormControl>
                         <FormLabel htmlFor='email' padding='2'
                         >Email Address</FormLabel>
@@ -35,6 +35,7 @@ function Account() {
                             id='email'
                             value={emailAddress}
                             onChange={({ target }) => setEmailAddress(target.value)} />
+                            
                         <FormLabel padding='2'>Password</FormLabel>
                         <Input
                             isRequired
@@ -44,7 +45,7 @@ function Account() {
                             onChange={({ target }) => setPassword(target.value)} />
                     </FormControl>
                     <FormControl mt='2'>
-                        <Button type='submit' colorScheme='teal'>Sign In</Button>
+                        <Button type='submit' colorScheme='blue'>Sign In</Button>
                     </FormControl>
                 </form>
             </Box>
@@ -52,4 +53,4 @@ function Account() {
     )
 }
 
-export default Account
+export default Login;
