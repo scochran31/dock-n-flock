@@ -48,12 +48,17 @@ function Signup() {
 
   return (
       <Flex justifyContent='center'>
-      <Box boxShadow='sm' ml='2'>
+      <Box
+        p='5vh'
+        borderRadius='50px'
+        shadow='md'
+        borderWidth='2px'
+        bgColor='whiteAlpha.700'
+      >
           <form method='POST' action='submit' onSubmit={handleSubmit}>
             <FormControl>
               <FormLabel htmlFor='username' padding='2'>Username:</FormLabel>
-              <Input
-                placeholder='Username'
+            <Input
                 name='username'
                 type='username'
                 id='username'
@@ -61,8 +66,7 @@ function Signup() {
                 onChange={handleChange} />
            
               <FormLabel htmlFor='email' padding='2'>Email Address:</FormLabel>
-              <Input
-                placeholder='test@tester.com'
+            <Input
                 name='email'
                 type='email'
                 id='email'
@@ -75,7 +79,7 @@ function Signup() {
                 // isRequired
                 name='password'
                 id='password'
-                type='password'
+              type='password'
                 value={formState.password}
                 onChange={handleChange} />
             </FormControl>

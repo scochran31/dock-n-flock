@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer} from 'react-leaflet';
-import axios from 'axios';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import axios from 'axios'
 import querystring from 'querystring';
 import ParkingLot from './ParkingLot';
 
 const getBoundingBox = (lat, long, radius) => {
-    const latLen = 40075017/360;
-    const longLen = Math.cos(lat*Math.PI/180) * 40075017/360;
+    const latLen = 40075017 / 360;
+    const longLen = Math.cos(lat * Math.PI / 180) * 40075017 / 360;
     return `(
-        ${+lat - radius/latLen},
-        ${+long - radius/longLen},
-        ${+lat + radius/latLen},
-        ${+long + radius/longLen}
+        ${+lat - radius / latLen},
+        ${+long - radius / longLen},
+        ${+lat + radius / latLen},
+        ${+long + radius / longLen}
     )`;
 }
 
@@ -31,16 +31,19 @@ const ParkingMap = ({ item, colorScheme }) => {
     const opQuery = `
         [out:json];
         way[amenity=parking]${getBoundingBox(lat, long, radius)};
-        (._;>;);out;`.replace(/\s/g,'');
+        (._;>;);out;`.replace(/\s/g, '');
     const url = 'http://overpass-api.de/api/interpreter';
 
-    async function loadMap(){
+    // async function loadMap() {
+    //     setIsLoading(true);
+    //     onOpen();
+    async function loadMap() {
         setIsLoading(true);
         onOpen();
         const result = await axios.post(
-            url, 
-            querystring.stringify({data:opQuery}),
-            {headers: {"Content-Type": "application/x-www-form-urlencoded"}});
+            url,
+            querystring.stringify({ data: opQuery }),
+            { headers: { "Content-Type": "application/x-www-form-urlencoded" } })
         const nodes = {};
         result.data.elements
             .filter(e => e.type === 'node')
@@ -55,9 +58,10 @@ const ParkingMap = ({ item, colorScheme }) => {
         setWays(localWays);
         setIsLoading(false);
     }
-    function onSelect(key){
+    function onSelect(key) {
         setSelectedKey(key);
     }
+
 
     return (
         <>
@@ -73,7 +77,7 @@ const ParkingMap = ({ item, colorScheme }) => {
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
-                            {ways.length && ways.map(way => <ParkingLot colorScheme={colorScheme} way={way} key={way.key} selected={selectedKey === way.key} onSelect={onSelect}/>)}
+                            {ways.length && ways.map(way => <ParkingLot colorScheme={colorScheme} way={way} key={way.key} selected={selectedKey === way.key} onSelect={onSelect} />)}
                         </MapContainer>
                     </ModalBody>
                 </ModalContent>
