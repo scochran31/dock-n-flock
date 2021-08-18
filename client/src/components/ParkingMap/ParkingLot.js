@@ -1,4 +1,4 @@
-import { Button, Divider, Link, Stack, Text } from '@chakra-ui/react';
+import { Button, Divider, Stack, Text } from '@chakra-ui/react';
 import { Tooltip, Polygon } from 'react-leaflet';
 
 const ParkingLot = ({ way, selected, onSelect, colorScheme }) => {
@@ -21,7 +21,7 @@ const ParkingLot = ({ way, selected, onSelect, colorScheme }) => {
         return 'green'
     })();
 
-    if(tags.parking == 'surface') tags.parking = 'above ground';
+    if (tags.parking === 'surface') tags.parking = 'above ground';
 
     const centerLat = way.poly.reduce((accumulator, currentValue) => accumulator + currentValue[0], 0)/way.poly.length;
     const centerLong = way.poly.reduce((accumulator, currentValue) => accumulator + currentValue[1], 0)/way.poly.length;
