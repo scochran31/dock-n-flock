@@ -10,8 +10,6 @@ import {
     Link,
     Link as ReachLink
 } from "@chakra-ui/react";
-import { NavLink } from 'react-router-dom';
-
 
 function Home() {
     return (
