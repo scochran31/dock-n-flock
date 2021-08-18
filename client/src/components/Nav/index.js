@@ -7,6 +7,7 @@ import {
     Image,
     SimpleGrid,
     Flex,
+    
 } from "@chakra-ui/react"
 
 
@@ -44,6 +45,7 @@ export default function Header() {
                     </Flex>
             </SimpleGrid>
         </Heading>
+
 
        
     )

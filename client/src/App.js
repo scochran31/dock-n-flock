@@ -13,6 +13,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
+
 import ParkingGarage from './pages/ParkingGarage'
 import {
   BrowserRouter as Router,
@@ -47,15 +48,19 @@ function App() {
       <Box bgImage={garagePhoto} bgPosition='center' h='100vh' w='100%' position='sticky' >
         <Router>
           <Nav />
+
           <Switch>
             <Route path='/login'><Login /></Route>
             <Route path='/signup'><Signup /></Route>
             <Route path='/parkingGarage'><ParkingGarage /></Route>
             <Route path='/search'><Search /></Route>
             <Route path='/'><Home /></Route>
+            
           </Switch>
       </Router>
       </Box>
+
+    
     </ChakraProvider>
     </ApolloProvider>
   )
