@@ -11,6 +11,7 @@ import {
   Button,
   FormControl,
   FormLabel,
+  Text,
 
 } from '@chakra-ui/react';
 
@@ -49,6 +50,7 @@ function Signup() {
         borderWidth='2px'
         bgColor='whiteAlpha.700'
       >
+        <Text fontSize='3xl'>Sign Up!</Text>
         <form method='POST' action='submit' onSubmit={handleSubmit}>
           <FormControl>
             <FormLabel htmlFor='username' padding='2'>Username:</FormLabel>
