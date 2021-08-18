@@ -32,7 +32,7 @@ const ParkingMap = ({ item, colorScheme }) => {
         [out:json];
         way[amenity=parking]${getBoundingBox(lat, long, radius)};
         (._;>;);out;`.replace(/\s/g, '');
-  const url = 'http://overpass-api.de/api/interpreter';
+  const url = 'https://overpass-api.de/api/interpreter';
 
   async function loadMap() {
     setIsLoading(true);
@@ -71,7 +71,7 @@ const ParkingMap = ({ item, colorScheme }) => {
           <ModalBody>
             <MapContainer isLoading={isLoading} center={[lat, long]} zoom={15} scrollWheelZoom={true}>
               <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               {ways.length && ways.map(way => <ParkingLot way={way} key={way.key} selected={selectedKey === way.key} onSelect={onSelect} />)}
