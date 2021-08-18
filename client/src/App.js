@@ -61,11 +61,4 @@ function App() {
   )
 }
 
-// render(
-//   <ApolloProvider client={client}>
-//     <App />
-//   </ApolloProvider>,
-//   document.getElementById('root'),
-// );
-
 export default App

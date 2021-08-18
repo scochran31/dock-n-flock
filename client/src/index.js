@@ -8,11 +8,11 @@ import App from './App';
 //   </ApolloProvider>,
 //   document.getElementById('root')
 // );
-//const client = new ApolloClient({
-  //cache: new InMemoryCache(),
-  //uri: "http://localhost:4000/graphql" 
-  // uri: "/graphql"
-//});
+// const client = new ApolloClient({
+//   cache: new InMemoryCache(),
+//   uri: "http://localhost:4000/graphql"
+//   // uri: "/graphql"
+// });
 
 ReactDOM.render(
   <React.StrictMode>
