@@ -63,7 +63,7 @@ function Search() {
           </SimpleGrid >
         </FormControl>
         <FormControl mt='2'>
-          <Button type='submit' colorScheme='teal'>Search Now!</Button>
+          <Button type='submit' colorScheme='blue'>Search Now!</Button>
         </FormControl>
       </form>
       <TMList isLoading={isLoading} items={items} />

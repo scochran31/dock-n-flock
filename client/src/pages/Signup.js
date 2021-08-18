@@ -89,7 +89,7 @@ function Signup() {
 
 
           <FormControl mt='2'>
-            <Button type='submit' colorScheme='teal'>Sign Up!</Button>
+            <Button type='submit' colorScheme='blue'>Sign Up!</Button>
           </FormControl>
         </form>
         {/* Display error if there is an error */}
