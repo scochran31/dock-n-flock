@@ -14,12 +14,7 @@ import {
 
 } from '@chakra-ui/react';
 
-
-
-
-
 function Signup() {
-
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -44,7 +39,6 @@ function Signup() {
       [name]: value,
     });
   };
-
 
   return (
     <Flex justifyContent='center'>
@@ -102,7 +96,6 @@ function Signup() {
         {error && <div>Signup failed</div>}
       </Box>
     </Flex>
-
   )
 }
 
