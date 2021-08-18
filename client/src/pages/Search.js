@@ -35,7 +35,12 @@ function Search() {
   }
 
   return (
-    <Box p='5'>
+    <Box
+      p='5vh'
+      borderRadius='50px'
+      shadow='md'
+      borderWidth='2px'
+      bgColor='whiteAlpha.700'>
       <form action='submit' onSubmit={searchSubmit}>
         <FormControl colorScheme='whiteAlpha'>
           <SimpleGrid columns={2} spacing={10}>
