@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useMutation } from '@apollo/client';
 import {
   Flex,
   Box,
@@ -7,23 +7,44 @@ import {
   FormLabel,
   Input,
   Button,
+  Text,
 } from "@chakra-ui/react";
 
-function Login() {
-  const [emailAddress, setEmailAddress] = useState('')
-  const [password, setPassword] = useState('')
-  // const isInvalid = password === '' || emailAddress === '';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
-  const handleSubmit = (event) => {
+function Login() {
+  const [formState, setFormState] = useState({email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('emailAddress', emailAddress)
-    console.log('password', password)
-    console.log('I was submitted')
+    try {
+      console.log(`Attempting to log in with ${JSON.stringify(formState)}`)
+      const { data } = await login({
+        variables: { ...formState }
+      });
+      Auth.login(data.login.token);
+      console.log(`Login success!`);
+    } catch (e) {
+      console.error(e);
+    }
+    
   }
 
   return (
     <Flex justifyContent='center'>
       <Box ml='2'>
+        <Text fontSize='3xl'>Log In</Text>
         <form method='POST' action='submit' onSubmit={handleSubmit}>
           <FormControl>
             <FormLabel htmlFor='email' padding='2'
@@ -32,10 +53,11 @@ function Login() {
               borderColor='gray.700'
               borderWidth='thin'
               variant='solid'
+              name='email'
               type='email'
               id='email'
-              value={emailAddress}
-              onChange={({ target }) => setEmailAddress(target.value)} />
+              value={formState.email}
+              onChange={handleChange} />
 
             <FormLabel padding='2'>Password</FormLabel>
             <Input
@@ -43,10 +65,11 @@ function Login() {
               borderWidth='thin'
               variant='solid'
               isRequired
+              name='password'
               type='password'
               id='password'
-              value={password}
-              onChange={({ target }) => setPassword(target.value)} />
+              value={formState.password}
+              onChange={handleChange} />
           </FormControl>
           <FormControl mt='2'>
             <Button type='submit' colorScheme='blue'>Sign In</Button>
