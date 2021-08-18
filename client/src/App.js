@@ -24,7 +24,7 @@ import garagePhoto from './Assets/ParkingGarage.png'
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(({ message, location, path }) => {
+    graphQLErrors.map(({ message, path }) => {
       console.log(`${message}`);
     });
   }
@@ -43,29 +43,22 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <ChakraProvider>
-      <Box bgImage={garagePhoto} bgPosition='center' h='100vh' w='100%' position='sticky' >
-        <Router>
-          <Nav />
-          <Switch>
-            <Route path='/login'><Login /></Route>
-            <Route path='/signup'><Signup /></Route>
-            <Route path='/parkingGarage'><ParkingGarage /></Route>
-            <Route path='/search'><Search /></Route>
-            <Route path='/'><Home /></Route>
-          </Switch>
-      </Router>
-      </Box>
-    </ChakraProvider>
+      <ChakraProvider>
+        <Box bgImage={garagePhoto} bgPosition='center' h='100vh' w='100%' position='sticky' >
+          <Router>
+            <Nav />
+            <Switch>
+              <Route path='/login'><Login /></Route>
+              <Route path='/signup'><Signup /></Route>
+              <Route path='/parkingGarage'><ParkingGarage /></Route>
+              <Route path='/search'><Search /></Route>
+              <Route path='/'><Home /></Route>
+            </Switch>
+          </Router>
+        </Box>
+      </ChakraProvider>
     </ApolloProvider>
   )
 }
-
-// render(
-//   <ApolloProvider client={client}>
-//     <App />
-//   </ApolloProvider>,
-//   document.getElementById('root'),
-// );
 
 export default App
