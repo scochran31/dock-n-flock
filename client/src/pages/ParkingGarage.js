@@ -9,4 +9,4 @@ function ParkingGarage() {
     )
 }
 
-export default ParkingGarage
+export default ParkingGarage;
