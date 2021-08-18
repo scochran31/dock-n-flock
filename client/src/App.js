@@ -13,6 +13,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
+
 import ParkingGarage from './pages/ParkingGarage'
 import {
   BrowserRouter as Router,
@@ -57,6 +58,8 @@ function App() {
             </Switch>
           </Router>
         </Box>
+
+
       </ChakraProvider>
     </ApolloProvider>
   )
