@@ -28,13 +28,20 @@ function Login() {
           <FormControl>
             <FormLabel htmlFor='email' padding='2'
             >Email Address</FormLabel>
-            <Input type='email'
+            <Input
+              borderColor='gray.700'
+              borderWidth='thin'
+              variant='solid'
+              type='email'
               id='email'
               value={emailAddress}
               onChange={({ target }) => setEmailAddress(target.value)} />
 
             <FormLabel padding='2'>Password</FormLabel>
             <Input
+              borderColor='gray.700'
+              borderWidth='thin'
+              variant='solid'
               isRequired
               type='password'
               id='password'

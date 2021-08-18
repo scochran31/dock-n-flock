@@ -53,6 +53,9 @@ function Signup() {
           <FormControl>
             <FormLabel htmlFor='username' padding='2'>Username:</FormLabel>
             <Input
+              borderColor='gray.700'
+              borderWidth='thin'
+              variant='solid'
               name='username'
               type='username'
               id='username'
@@ -61,6 +64,9 @@ function Signup() {
 
             <FormLabel htmlFor='email' padding='2'>Email Address:</FormLabel>
             <Input
+              borderColor='gray.700'
+              borderWidth='thin'
+              variant='solid'
               name='email'
               type='email'
               id='email'
@@ -69,6 +75,9 @@ function Signup() {
 
             <FormLabel padding='2'>Password:</FormLabel>
             <Input
+              borderColor='gray.700'
+              borderWidth='thin'
+              variant='solid'
               placeholder='******'
               // isRequired
               name='password'

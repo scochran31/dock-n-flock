@@ -49,7 +49,6 @@ const ParkingLot = ({ way, selected, onSelect }) => {
         </Tooltip>}
     </Polygon>
   )
-
 }
 
 export default ParkingLot;
