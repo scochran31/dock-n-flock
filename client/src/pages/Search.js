@@ -46,29 +46,35 @@ function Search() {
           <SimpleGrid columns={2} spacing={10}>
             <Box>
               <Input
+                borderColor='gray.700'
+                borderWidth='thin'
+                variant='solid'
                 placeholder='What city are you looking in?'
                 type='text'
                 id='city'
                 name='city'
                 defaultValue={city}
                 onBlur={handleChange}
-                variant='filled' />
+              />
             </Box>
 
             <Box>
               <Input
+                borderColor='gray.700'
+                borderWidth='thin'
+                variant='solid'
                 placeholder='What are you searching for?'
                 id='event'
                 type='text'
                 name='event'
                 defaultValue={event}
                 onBlur={handleChange}
-                variant='filled' />
+              />
             </Box>
           </SimpleGrid >
         </FormControl>
         <FormControl mt='2'>
-          <Button type='submit' colorScheme='teal'>Search Now!</Button>
+          <Button type='submit' colorScheme='blue'>Search Now!</Button>
         </FormControl>
       </form>
       {items.length != 0 && <TMList isLoading={isLoading} items={items} />}
