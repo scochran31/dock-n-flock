@@ -21,6 +21,7 @@ import {
   // Link
 } from 'react-router-dom'
 import garagePhoto from './Assets/ParkingGarage.png'
+import Footer from './components/Footer'
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
