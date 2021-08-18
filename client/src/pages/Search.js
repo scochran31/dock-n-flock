@@ -71,7 +71,7 @@ function Search() {
           <Button type='submit' colorScheme='teal'>Search Now!</Button>
         </FormControl>
       </form>
-      <TMList isLoading={isLoading} items={items} />
+      {items.length != 0 && <TMList isLoading={isLoading} items={items} />}
     </Box>
   )
 }
