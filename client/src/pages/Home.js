@@ -83,13 +83,6 @@ function Home() {
           >
             <Login />
             <Box align='center' justify='center' pt={5}>
-              <Text
-                fontSize={{ base: '12px', md: '16px', lg: '20px' }}>
-                Need to create an account?{' '}
-                <Link as={ReachLink} to='/signup' color='hotpink'>Sign up{' '}
-                </Link>
-                by clicking this link!
-              </Text>
             </Box>
           </Box>
         </Box>

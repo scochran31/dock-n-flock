@@ -35,7 +35,13 @@ function Search() {
     }
 
     return (
-        <Box p='5'>
+        <Box
+          p={5}
+          borderRadius='50px'
+          shadow='md'
+          borderWidth='2px'
+          bgColor='whiteAlpha.800'
+        >
             <form action='submit' onSubmit={searchSubmit}>
                 <FormControl colorScheme='whiteAlpha'>
                     <SimpleGrid columns={2} spacing={10}>
@@ -72,7 +78,7 @@ function Search() {
                     <Button type='submit' colorScheme='teal'>Search Now!</Button>
                 </FormControl>
             </form>
-            <TMList isLoading={isLoading} items={items} />
+            {items != 0 && <TMList isLoading={isLoading} items={items} />}
         </Box>
     )
 }

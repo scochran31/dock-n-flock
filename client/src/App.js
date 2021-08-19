@@ -44,7 +44,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ChakraProvider>
-        <Box bgImage={garagePhoto} bgPosition='center' h='absolute' w='100%' position='sticky' >
+        <Box bgImage={garagePhoto} bgPosition='center' minH='100vh' h='100%' w='100%' position='sticky' >
           <Router>
             <Nav />
             <Switch>

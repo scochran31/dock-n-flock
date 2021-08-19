@@ -53,6 +53,11 @@
   color: white;
   padding: 20px;
   transform: rotateY(180deg);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.card-back::-webkit-scrollbar {
+  display:none;
 }
 
 .card li {
