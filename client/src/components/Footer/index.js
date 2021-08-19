@@ -10,7 +10,7 @@ import {
     Copyright,
     
 } from "@chakra-ui/react"
-import { FaGithub } from '@chakra-ui/icons'
+import { GoMarkGithub } from "react-icons/go";
 
 
 
@@ -35,11 +35,11 @@ export const Footer = (props) => (
           
         <ButtonGroup variant="ghost" color="gray.600" {...props}>
     
-        <IconButton as="a" href="https://github.com/scochran31" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Shawn />
-        <IconButton as="a" href="https://github.com/MEaston12" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Malcolm />
-        <IconButton as="a" href="https://github.com/cpesar" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Chris />
-        <IconButton as="a" href="https://github.com/mandahos" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Amanda />
-        <IconButton as="a" href="#" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Peter />
+        <IconButton as="a" href="https://github.com/scochran31" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />} Shawn />
+        <IconButton as="a" href="https://github.com/MEaston12" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />} Malcolm />
+        <IconButton as="a" href="https://github.com/cpesar" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />} Chris />
+        <IconButton as="a" href="https://github.com/mandahos" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />} Amanda />
+        <IconButton as="a" href="#" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />} Peter />
 
     
   </ButtonGroup>
@@ -54,4 +54,6 @@ export const Footer = (props) => (
     </Box>
     </ModalFooter>
   )
+
+export default Footer;
 

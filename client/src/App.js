@@ -13,7 +13,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
-
+import Footer from './components/Footer'
 import ParkingGarage from './pages/ParkingGarage'
 import {
   BrowserRouter as Router,
@@ -22,7 +22,7 @@ import {
   // Link
 } from 'react-router-dom'
 import garagePhoto from './Assets/ParkingGarage.png'
-import Footer from './components/Footer'
+
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
@@ -56,6 +56,7 @@ function App() {
               <Route path='/search'><Search /></Route>
               <Route path='/'><Home /></Route>
             </Switch>
+            <Footer />
           </Router>
         </Box>
 
