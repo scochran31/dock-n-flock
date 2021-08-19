@@ -22,12 +22,17 @@ function Login() {
   }
 
   return (
-    <Flex justifyContent='center'>
-      <Box ml='2'>
+    <Flex align='center' justifyContent='center'>
+      <Box >
         <form method='POST' action='submit' onSubmit={handleSubmit}>
           <FormControl>
-            <FormLabel htmlFor='email' padding='2'
-            >Email Address</FormLabel>
+            <FormLabel
+              htmlFor='email'
+              padding='2'
+              fontWeight='bold'
+              fontSize='xl'
+            >Email Address
+            </FormLabel>
             <Input
               borderColor='gray.700'
               borderWidth='thin'
@@ -37,7 +42,12 @@ function Login() {
               value={emailAddress}
               onChange={({ target }) => setEmailAddress(target.value)} />
 
-            <FormLabel padding='2'>Password</FormLabel>
+            <FormLabel
+              padding='2'
+              fontWeight='bold'
+              fontSize='xl'
+            >Password
+            </FormLabel>
             <Input
               borderColor='gray.700'
               borderWidth='thin'
