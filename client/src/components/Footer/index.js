@@ -1,8 +1,7 @@
 import React from 'react'
 
 import {
-    ModalFooter,
-    Box,
+   Box,
     Stack,
     ButtonGroup, 
     IconButton,
@@ -16,14 +15,8 @@ function Contact() {
     return <Icon as={GoMarkGithub} />
 }
 
-const Copyright = (props) => (
-    <Text fontSize="sm" {...props}>
-      &copy; {new Date().getFullYear()} Envelope, Inc. All rights reserved.
-    </Text>
-  )
-
 const Footer = (props) => (
-    <ModalFooter>
+    
     <Box
       as="footer"
       role="contentinfo"
@@ -60,7 +53,7 @@ const Footer = (props) => (
         />
       </Stack>
     </Box>
-    </ModalFooter>
+    
   )
 
 
