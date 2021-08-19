@@ -62,7 +62,7 @@ const ParkingMap = ({ item, colorScheme }) => {
 
   return (
     <>
-      <Button colorScheme={colorScheme} onClick={loadMap}>View Parking Map</Button>
+      <Button m={1} w='100%' colorScheme={colorScheme} onClick={loadMap}>View Parking Map</Button>
       <Modal motionPreset="slideInBottom" onClose={onClose} isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent maxW="75vw" pb={5}>
