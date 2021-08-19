@@ -6,8 +6,7 @@ import {
     Stack,
     ButtonGroup, 
     IconButton,
-    Text,
-    Copyright,
+    Text
     
 } from "@chakra-ui/react"
 import { Icon } from "@chakra-ui/react"
@@ -17,6 +16,11 @@ function Contact() {
     return <Icon as={GoMarkGithub} />
 }
 
+const Copyright = (props) => (
+    <Text fontSize="sm" {...props}>
+      &copy; {new Date().getFullYear()} Envelope, Inc. All rights reserved.
+    </Text>
+  )
 
 const Footer = (props) => (
     <ModalFooter>
@@ -39,11 +43,11 @@ const Footer = (props) => (
           
         <ButtonGroup variant="ghost" color="gray.600" {...props}>
     
-        <IconButton as="a" href="https://github.com/scochran31" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />} Shawn />
-        <IconButton as="a" href="https://github.com/MEaston12" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />} Malcolm />
-        <IconButton as="a" href="https://github.com/cpesar" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />} Chris />
-        <IconButton as="a" href="https://github.com/mandahos" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />} Amanda />
-        <IconButton as="a" href="#" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />} Peter />
+        <IconButton as="a" href="https://github.com/scochran31" aria-label="GitHub" icon={< Contact fontSize="20px" />}  />
+        <IconButton as="a" href="https://github.com/MEaston12" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />} />
+        <IconButton as="a" href="https://github.com/cpesar" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />}  />
+        <IconButton as="a" href="https://github.com/mandahos" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />}  />
+        <IconButton as="a" href="#" aria-label="GitHub" icon={< GoMarkGithub fontSize="20px" />}  />
 
     
   </ButtonGroup>
