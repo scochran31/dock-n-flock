@@ -23,8 +23,7 @@ export default function Header() {
           <NavLink to='/'>
             <Image
               width='250px'
-              height='150px'
-              objectFit='cover'
+              objectFit='scale-down'
               src={logo}
               alt='logo' />
           </NavLink>

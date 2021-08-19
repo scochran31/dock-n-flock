@@ -21,7 +21,7 @@ const ParkingLot = ({ way, selected, onSelect }) => {
     return 'green'
   })();
 
-  if (tags.parking == 'surface') tags.parking = 'above ground';
+  if (tags.parking === 'surface') tags.parking = 'above ground';
 
   const centerLat = way.poly.reduce((acc, val) => acc + val[0], 0) / way.poly.length;
   const centerLong = way.poly.reduce((acc, val) => acc + val[1], 0) / way.poly.length;
