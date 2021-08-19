@@ -59,8 +59,6 @@ function App() {
             <Footer />
           </Router>
         </Box>
-
-
       </ChakraProvider>
     </ApolloProvider>
   )

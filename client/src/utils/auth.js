@@ -27,7 +27,7 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    window.location.assign('/search'); //This is where it redirects to when logged in
   }
 
   logout() {
