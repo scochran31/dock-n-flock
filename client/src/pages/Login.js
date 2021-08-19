@@ -42,14 +42,9 @@ function Login() {
   }
 
   return (
-<<<<<<< HEAD
-    <Flex align='center' justifyContent='center'>
-      <Box >
-=======
     <Flex justifyContent='center'>
       <Box ml='2'>
         <Text fontSize='3xl'>Log In</Text>
->>>>>>> e11af1c9c1e866bbd782dfc7faca3bd27d6810a2
         <form method='POST' action='submit' onSubmit={handleSubmit}>
           <FormControl>
             <FormLabel
