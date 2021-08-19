@@ -56,8 +56,6 @@ function App() {
             </Switch>
           </Router>
         </Box>
-
-
       </ChakraProvider>
     </ApolloProvider>
   )

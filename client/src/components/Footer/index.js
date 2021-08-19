@@ -55,14 +55,3 @@ export const Footer = (props) => (
     </ModalFooter>
   )
 
-//   <Flex wrap='wrap' alignItems='center' justifyContent='space-evenly'>
-//                     <NavLink to='/signup'>
-//                         <Button colorScheme='yellow' mt='4'>Signup</Button>
-//                     </NavLink>
-//                     <NavLink to='/search'>
-//                         <Button colorScheme='yellow' mt='4'>Search</Button>
-//                     </NavLink>
-//                     <NavLink to='/parkingGarage'>
-//                         <Button colorScheme='yellow' mt='4'> Garage</Button>
-//                         </NavLink>
-//                     </Flex>
