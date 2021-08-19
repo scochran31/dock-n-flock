@@ -24,9 +24,8 @@ import garagePhoto from './Assets/ParkingGarage.png'
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(({ message, path }) => {
-      console.log(`${message}`);
-    });
+    console.log(graphQLErrors);
+
   }
 });
 
@@ -44,7 +43,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ChakraProvider>
-        <Box bgImage={garagePhoto} bgPosition='center' h='100vh' w='100%' position='sticky' >
+        <Box bgImage={garagePhoto} bgPosition='center' h='absolute' w='100%' position='sticky' >
           <Router>
             <Nav />
             <Switch>
