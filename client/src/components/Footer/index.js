@@ -1,21 +1,25 @@
 import React from 'react'
 
 import {
-    ModalFooter,
     Box,
     Stack,
     ButtonGroup, 
     IconButton,
-    Text,
-    Copyright,
+    Text
     
 } from "@chakra-ui/react"
-import { FaGithub } from '@chakra-ui/icons'
+import { GoMarkGithub } from "react-icons/go";
 
+
+const Copyright = (props) => (
+    <Text fontSize="sm" {...props}>
+      &copy; {new Date().getFullYear()} Dock-N-Flock, Inc. All rights reserved.
+    </Text>
+  )
 
 
 export const Footer = (props) => (
-    <ModalFooter>
+    
     <Box
       as="footer"
       role="contentinfo"
@@ -27,31 +31,38 @@ export const Footer = (props) => (
         md: '8',
       }}
     >
-         <Text fontSize="sm" {...props}>
+        
+         <Text fontSize="sm" justify="center" {...props}>
     &copy; {new Date().getFullYear()} Dock-N-Flock. All rights reserved.
         </Text>
+        
       <Stack>
-        <Stack direction="row" spacing="4" align="center" justify="space-between">
+        <Stack direction="row" spacing="4" align="center" justify="center">
           
-        <ButtonGroup variant="ghost" color="gray.600" {...props}>
+        <ButtonGroup variant="black" color="gray.200" {...props}>
     
-        <IconButton as="a" href="https://github.com/scochran31" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Shawn />
-        <IconButton as="a" href="https://github.com/MEaston12" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Malcolm />
-        <IconButton as="a" href="https://github.com/cpesar" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Chris />
-        <IconButton as="a" href="https://github.com/mandahos" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Amanda />
-        <IconButton as="a" href="#" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} Peter />
+        <IconButton as="a" href="https://github.com/scochran31" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />}  />
+        <IconButton as="a" href="https://github.com/MEaston12" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />}  />
+        <IconButton as="a" href="https://github.com/cpesar" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />}  />
+        <IconButton as="a" href="https://github.com/mandahos" aria-label="GitHub" icon={<GoMarkGithub fontSize="20px" />} />
+        
 
     
   </ButtonGroup>
+  
         </Stack>
-        <Copyright
+        {/* <Copyright
           alignSelf={{
             base: 'center',
             sm: 'start',
           }}
-        />
+        /> */}
       </Stack>
     </Box>
-    </ModalFooter>
+   
   )
+
+  
+
+export default Footer;
 
