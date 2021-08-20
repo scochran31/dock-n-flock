@@ -14,7 +14,10 @@ import Login from './pages/Login'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
 import Footer from './components/Footer'
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 import ParkingGarage from './pages/ParkingGarage'
 import {
   BrowserRouter as Router,
@@ -24,11 +27,11 @@ import {
 } from 'react-router-dom'
 import garagePhoto from './Assets/ParkingGarage.png'
 
+
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(({ message, path }) => {
-      console.log(`${message}`);
-    });
+    console.log(graphQLErrors);
+
   }
 });
 
@@ -45,8 +48,13 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+<<<<<<< HEAD
       <ChakraProvider theme={theme}>
         <Box bgImage={garagePhoto} bgPosition='center' h='100vh' w='100%' position='sticky' >
+=======
+      <ChakraProvider>
+        <Box bgImage={garagePhoto} bgPosition='center' minH='100vh' h='100%' w='100%' position='sticky' >
+>>>>>>> main
           <Router>
             <Nav />
             <Switch>
@@ -64,4 +72,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
