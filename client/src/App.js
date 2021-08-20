@@ -7,17 +7,13 @@ import {
   from
 } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
-import { ChakraProvider, Box, theme } from "@chakra-ui/react"
+import { ChakraProvider, Box } from "@chakra-ui/react"
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
 import Footer from './components/Footer'
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 import ParkingGarage from './pages/ParkingGarage'
 import {
   BrowserRouter as Router,
@@ -48,13 +44,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-<<<<<<< HEAD
-      <ChakraProvider theme={theme}>
-        <Box bgImage={garagePhoto} bgPosition='center' h='100vh' w='100%' position='sticky' >
-=======
       <ChakraProvider>
         <Box bgImage={garagePhoto} bgPosition='center' minH='100vh' h='100%' w='100%' position='sticky' >
->>>>>>> main
           <Router>
             <Nav />
             <Switch>
