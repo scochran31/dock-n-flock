@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+  # Dock 'n' Flock
+  ![License Badge](https://img.shields.io/badge/License-MIT-blueviolet.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ## Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Test](#test)
+  * [Links](#links)
+  * [Questions](#questions)
 
-## Available Scripts
+  ## Description
+  This is an application that allows users to search for events in their local area using TicketMaster. Through the event search, we have given the user the ability to find the nearby parking to that event, with directions as well. The thought behind this app was to give users the ability to purchase parking over their phone for the event that they are attending.
 
-In the project directory, you can run:
+<img width="1440" alt="Screen Shot 2021-08-22 at 4 08 59 PM" src="https://user-images.githubusercontent.com/79678327/130368664-53074cea-877d-451e-9904-627019e85f58.png">
 
-### `npm start`
+  ## Installation
+  Navigate to https://boiling-headland-75602.herokuapp.com/ and create an account. From there, explore the application!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ## How to Use
+  Create a user account, and search for events! You can then decide if you wish to purchase tickets, find parking, and navigate to that parking lot as well.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  ## License
+  [MIT](https://choosealicense.com/licenses/mit/)
 
-### `npm test`
+  ## Guidelines
+  Contact the creators of the application for guidlines regarding contributions to this project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ## Test
+  There are no tests available at this time.
 
-### `npm run build`
+  ## Links
+  * https://github.com/scochran31/dock-n-flock
+  * https://boiling-headland-75602.herokuapp.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ## Questions
+  Contact me with any additonal questions through these channels:
+  * GitHub - [scochran31](https://github.com/scochran31)
+  * Email - shawn.cochran31@gmail.com
